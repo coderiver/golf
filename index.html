@@ -6,17 +6,86 @@
 	<title>Template</title>
 	<meta name="viewport" content="initial-scale=1"/>
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/jquery.js"></script>
 	<script src="js/common.js"></script>
 </head>
 <body>
-
 <!-- BEGIN  out-->
 <div class="out">
-	<img src="img/svg/logo.svg" alt="">
-	<img src="img/svg/arr-left.svg" alt="">
-	<img src="img/svg/stats-money.svg" alt="">
+	<header class="header">
+		<a class="back" href="#"></a>
+		<a class="logo" href="#">Fancy</a>
+		<a class="menu" href="#"><i></i></a>
+		<ul class="stats">
+			<li><a href="#"><i class="stats__ico-money"></i><span>9999</span></a></li>
+			<li><a href="#"><i class="stats__ico-cart"></i><span>12</span></a></li>
+			<li><a href="#"><i class="stats__ico-games"></i><span>25</span></a></li>
+		</ul>
+	</header>	
+	<div class="layout">
+		<div class="column">			
+			<div class="title"><span>My Games</span><i class="ico-question"></i></div>
+			<ul class="type">
+				<li class="is-active"><a href="#"><span><i class="type__ico-all"></i></span>All (8)</a></li>
+				<li><a href="#"><span><i class="type__ico-archived"></i></span>Archived (9999)</a></li>
+				<li><a href="#"><span><i class="type__ico-live"></i></span>live (3)</a></li>
+				<li><a href="#"><span><i class="type__ico-upcoming"></i></span>Upcoming (5)</a></li>
+			</ul>
+			<div class="item-wrap">
+				<div class="item">
+					<div class="item__man">
+						<div class="item__man-in">
+							<a class="item__man-link" href="#">
+								<div class="item__ava"><img src="http://lorempixel.com/45/45" alt=""></div>
+								<div class="item__name">Phil Mickelson</div>
+							</a>
+						</div>
+						<div class="item__man-in">
+							<a class="item__man-link" href="#">
+								<div class="item__ava"><img src="http://lorempixel.com/45/45" alt=""></div>
+								<div class="item__name">Phil Mickelson</div>
+							</a>
+						</div>							
+					</div>
+					<ul class="item__details">
+						<li>Stake: $20</li>
+						<li>Cap: $ 60K</li>
+						<li>Entries: 52</li>
+						<li>Prizes: $ 20K</li>
+					</ul>
+					<div class="item__live">
+						<div class="item__live-title">live</div>
+						<div class="item__points">
+							<div class="item__points-in">
+								<i></i>
+								<span>100<em>points</em></span>
+							</div>								
+						</div>
+					</div>	
+					<div class="item__drag">
+						<div class="item__actions">
+							
+						</div>
+					</div>				
+				</div>
+			</div>
+			
+		</div>
+		<div class="column">
+			<div class="title"><span>My Prediction</span><i class="ico-question"></i></div>
+		</div>		
+	</div>
+
+
+
+	<img src="img/svg/action-money.svg" alt="">
+	<img src="img/svg/action-eye.svg" alt="">
+	<img src="img/svg/action-view.svg" alt="">
+	<img src="img/svg/action-del.svg" alt="">
+	<img src="img/svg/action-edit.svg" alt="">
 </div>
 <!-- END out-->
 
