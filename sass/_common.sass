@@ -109,7 +109,7 @@ a
 
 
 .layout
-	padding: 0 25px 0 0
+	padding: 0 25px 20px 0
 	font-size: 0
 .column
 	display: inline-block
@@ -156,7 +156,7 @@ a
 		display: block
 		height: 63px
 		font-size: 10px
-		color: #008aec
+		color: #29639c
 		text-transform: uppercase 
 	span
 		display: block
@@ -177,13 +177,22 @@ a
 .item-wrap
 	border: 1px solid #4095ed
 	background: #fff 	
-.item__man, .item__details, .item__live
+.item
+	position: relative
+	border-top: 1px solid #4095ed
+	font-size: 0
+	overflow: hidden
+	&:first-child
+		border: none
+.item__man, .item__details, .item__right
 	display: inline-block
 	vertical-align: top
 .item__man
 	width: 220px
 	padding-right: 20px
 	border-left: 9px solid #00ff00 
+.item__man_mod
+	border-color: #66ffff
 .item__man-in
 	position: relative
 	display: table
@@ -199,19 +208,32 @@ a
 	text-align: left
 .item__ava
 	padding-right: 20px
+	img
+		display: block
+		margin-top: 1px
+		&:first-child
+			margin: 0
 .item__name
 	font-size: 15px
 	color: #0071BA 
+.item__name-status
+	padding-top: 10px
+	font-size: 10px
+	color: #0071BA 
 .item__details
-	width: 120px
-	padding: 20px 20px 0 0
+	padding-right: 20px
+.item__details-list
+	display: table-cell
+	width: 110px
+	height: 90px
 	font-size: 10px
 	color: #5D5D5D 
-.item__live
-	width: 55px
+	vertical-align: middle
+.item__right
+	width: 65px
 	padding: 5px 0
 	text-align: right
-.item__live-title
+.item__live
 	display: inline-block
 	width: 34px
 	height: 22px
@@ -236,9 +258,152 @@ a
 		display: block		
 		font-size: 8px
 		font-style: normal
+.item__points-stats
+	font-size: 10px
+.item__points-green
+	color: #7ab100 
+.item__points-red
+	color: #ff201b 
+.item__date
+	display: inline-block
+	width: 20px
+	height: 15px
+	margin-right: 4px
+	border: 1px solid #ffdc33
+	border-width: 5px 2px 2px
+	text-align: center
+	line-height: 15px
+	font-size: 10px  
+.item__drag
+	position: absolute
+	top: -1px
+	right: -1px
+	bottom: -1px
+	padding-left: 21px
+	border: 1px solid #4095ed
+	cursor: pointer
+.item__drag-line
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	width: 21px
+	border-right: 1px solid #4095ed
+	+gh(#00d9ea, #008aec)
+	i
+		position: absolute
+		top: 10px
+		left: 10px
+		bottom: 10px
+		width: 1px
+		background: #FFF
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+			bottom: 0
+			width: 1px
+			background: #FFF
+		&:before
+			left: -5px
+		&:after
+			right: -5px
+.item__actions
+	display: table
+	width: 100%
+	background: #FFF 
+.item__actions-list
+	display: table-row
+	li
+		display: table-cell
+		height: 91px
+		padding: 0 10px
+		text-align: center
+		a
+			display: block
+			font-size: 9px
+			text-transform: uppercase
+			color: #29639c 
+		span
+			display: block
+			height: 40px
+			padding-top: 15px
+			text-align: center
+			line-height: 40px
+		i
+			display: inline-block
+			vertical-align: middle
+		li
+			display: inline-block
+.item__actions-ico-money
+	+svg(action-money, 32, 21)
+.item__actions-ico-eye
+	+svg(action-eye, 30, 19)
+.item__actions-ico-view
+	+svg(action-view, 19, 22)
+.item__actions-ico-del
+	+svg(action-del, 25, 17)
+.item__actions-ico-edit
+	+svg(action-edit, 24, 24)
 
 
 
-
-
+.table	
+	td, th
+		width: 14%
+		padding: 5px
+		background: rgba(255,255,255,.8) 
+		border: 1px solid #4196ed
+		font-weight: normal
+		font-size: 10px
+		text-align: center
+	th
+		padding: 7px 5px
+	&.table__description
+		td
+			padding: 7px
+			text-align: left
+		tr
+			&:first-child
+				td
+					border-top: none
+	.table__not-correct, .table__played, .table__not-played, .table__correct
+		display: inline-block
+		vertical-align: middle
+		& + .table__text
+			margin-left: 4px 
+	.table__not-correct
+		+svg(not-correct, 18, 18)
+	.table__correct
+		+svg(correct, 18, 18)
+	.table__not-played
+		+svg(not-played, 18, 18)
+	.table__played
+		width: 18px
+		height: 18px
+		border-radius: 50%
+		border: 1px solid #4095ed
+	i
+		&.table__eagle, &.table__birdie, &.table__par, &.table__bogey, &.table__2bogey, &.table__3bogey
+			display: inline-block
+			width: 15px
+			height: 15px
+			margin-right: 4px 
+			border: 1px solid #979797
+			vertical-align: middle
+	.table__eagle
+		background: #6CF 
+	.table__birdie
+		background: #3366cc 
+	.table__bogey
+		background: #ffcc00 
+	.table__2bogey
+		background: #cc9900 
+	.table__3bogey
+		background: #cc6600 
+	.table__par
+		background: #ffffcc 
+	.table__text
+		display: inline-block
+		vertical-align: middle
 
